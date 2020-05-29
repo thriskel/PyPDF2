@@ -7,6 +7,8 @@ data, viewing options, and passwords to PDF files.
 It can retrieve text and metadata from PDFs as well
 as merge entire files together.
 
+This fork has only one modification to avoid a common error while reading certain pdf files.
+
 Homepage  
 http://mstamy2.github.io/PyPDF2/
 
