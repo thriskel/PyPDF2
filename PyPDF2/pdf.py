@@ -499,9 +499,12 @@ class PdfFileWriter(object):
                 assert len(key) == (len(self._encrypt_key) + 5)
                 md5_hash = md5(key).digest()
                 key = md5_hash[:min(16, len(self._encrypt_key) + 5)]
-            obj.writeToStream(stream, key)
-            stream.write(b_("\nendobj\n"))
-
+            try:
+                obj.writeToStream(stream, key)
+                stream.write(b_("\nendobj\n"))
+            except:
+                pass
+                
         # xref table
         xref_location = stream.tell()
         stream.write(b_("xref\n"))
